@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CalorieTracker Pro</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="style.css" rel="stylesheet">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">CalorieTracker Pro</a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#nav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="nav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#calculate">Calculate</a></li>
+        <li class="nav-item"><a class="nav-link" href="#nutrition">Nutrition</a></li>
+        <li class="nav-item"><a class="nav-link" href="#burn">Workout Burn</a></li>
+        <li class="nav-item"><a class="nav-link" href="#workout">Workouts</a></li>
+        <li class="nav-item"><a class="nav-link" href="#info">Health Info</a></li>
+      </ul>
+
+      <button id="darkToggle" class="btn btn-outline-light ms-3">🌙</button>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero-section text-center text-white d-flex align-items-center">
+  <div class="container">
+    <h1 class="display-4 fw-bold">Track Calories. Build Strength. Live Healthy.</h1>
+    <p class="lead">Your smart health companion.</p>
+  </div>
+</section>
+
+<!-- CALCULATE SECTION -->
+<section id="calculate" class="section-padding">
+  <div class="container">
+    <h2 class="text-center mb-4">Calorie & BMI Calculator</h2>
+
+    <div class="card shadow-lg p-4">
+      <form id="calorieForm">
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="number" id="age" class="form-control" placeholder="Age" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <input type="number" id="weight" class="form-control" placeholder="Weight (kg)" required>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <input type="number" id="heightCm" class="form-control" placeholder="Height (cm)" required>
+          </div>
+          <div class="col-md-6 mb-3">
+            <select id="activity" class="form-control">
+              <option value="sedentary">No Exercise</option>
+              <option value="light">Light</option>
+              <option value="moderate">Moderate</option>
+              <option value="active">Active</option>
+              <option value="very_active">Very Active</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="mb-3 text-center">
+          <input type="radio" name="gender" value="male" required> Male
+          <input type="radio" name="gender" value="female" required class="ms-3"> Female
+        </div>
+
+        <button type="submit" class="btn btn-primary w-100">Calculate</button>
+      </form>
+
+      <div id="dailyResult" class="alert alert-info mt-3 text-center"></div>
+      <div id="bmiResult" class="alert alert-secondary mt-2 text-center"></div>
+    </div>
+  </div>
+</section>
+
+<!-- NUTRITION SECTION -->
+<section id="nutrition" class="section-padding bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Daily Macro Breakdown</h2>
+
+    <div class="card p-4 shadow">
+      <div id="macroResults" class="text-center fw-bold mb-3"></div>
+
+      <div class="progress mt-3">
+        <div id="carbBar" class="progress-bar bg-primary"></div>
+      </div>
+
+      <div class="progress mt-3">
+        <div id="proteinBar" class="progress-bar bg-success"></div>
+      </div>
+
+      <div class="progress mt-3">
+        <div id="fatBar" class="progress-bar bg-warning"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKOUT BURN SECTION -->
+<section id="burn" class="section-padding">
+  <div class="container">
+    <h2 class="text-center mb-4">Workout Burn Calculator</h2>
+
+    <div class="card p-4 shadow">
+      <select id="workoutType" class="form-control mb-3">
+        <option value="10">Running (10 kcal/min)</option>
+        <option value="8">Cycling (8 kcal/min)</option>
+        <option value="7">Strength Training (7 kcal/min)</option>
+        <option value="12">HIIT (12 kcal/min)</option>
+      </select>
+
+      <input type="number" id="workoutMinutes" class="form-control mb-3" placeholder="Minutes">
+
+      <button id="calculateBurn" class="btn btn-danger w-100">Calculate Burn</button>
+
+      <div id="burnResult" class="alert alert-danger mt-3 text-center"></div>
+    </div>
+  </div>
+</section>
+
+<!-- WORKOUT LIBRARY (UNCHANGED) -->
+<section id="workout" class="section-padding bg-light">
+  <div class="container">
+    <h2 class="text-center mb-5">Home Workout Library</h2>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="workout-card">
+          <img src="images/stretch.jpg" class="workout-img">
+          <div class="workout-body">
+            <h5>Above Head Chest Stretch</h5>
+            <p>Improves flexibility, posture and shoulder mobility.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="workout-card">
+          <img src="images/crunch.jpg" class="workout-img">
+          <div class="workout-body">
+            <h5>Air Bike Crunches</h5>
+            <p>Targets abdominal muscles and burns ~12 kcal/min.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="workout-card">
+          <img src="images/squat.jpg" class="workout-img">
+          <div class="workout-body">
+            <h5>Air Squat</h5>
+            <p>Strengthens lower body and improves balance.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="workout-card">
+          <img src="images/heel.jpg" class="workout-img">
+          <div class="workout-body">
+            <h5>Alternate Heel Touches</h5>
+            <p>Engages obliques and improves core stability.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="workout-card">
+          <img src="images/pushup.jpg" class="workout-img">
+          <div class="workout-body">
+            <h5>Push-Ups</h5>
+            <p>Builds chest, shoulders and triceps strength.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-4 col-md-6">
+        <div class="workout-card">
+          <img src="images/mountain.jpg" class="workout-img">
+          <div class="workout-body">
+            <h5>Mountain Climbers</h5>
+            <p>High intensity cardio & full body conditioning.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HEALTH INFO SECTION -->
+<section id="info" class="section-padding">
+  <div class="container">
+    <h2 class="text-center mb-5">Advanced Nutrition & Health Insights</h2>
+    <div class="row g-4">
+      <div class="col-lg-4 col-md-6">
+        <div class="health-card">
+          <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=800&q=80" class="health-img">
+          <div class="health-body">
+            <h5>Balanced Macronutrients</h5>
+            <p>A well-balanced diet supports metabolism and energy.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="health-card">
+          <img src="https://images.unsplash.com/photo-1505575967455-40e256f73376?auto=format&fit=crop&w=800&q=80" class="health-img">
+          <div class="health-body">
+            <h5>Hydration & Metabolism</h5>
+            <p>Drink 2–3 liters daily to maintain optimal body function.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="health-card">
+          <img src="https://images.unsplash.com/photo-1554284126-aa88f22d8b74?auto=format&fit=crop&w=800&q=80" class="health-img">
+          <div class="health-body">
+            <h5>Strength Training & Fat Loss</h5>
+            <p>Build muscle to increase your resting metabolism.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>

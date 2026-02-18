@@ -1,0 +1,218 @@
+/* ================= GLOBAL ================= */
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  scroll-behavior: smooth;
+  padding-top: 70px;
+  background-color: #f4f6f9;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.section-padding {
+  padding: 100px 0;
+}
+
+/* ================= DARK MODE ================= */
+
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-mode .card,
+.dark-mode .workout-card,
+.dark-mode .health-card {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+.dark-mode .navbar {
+  background-color: #000 !important;
+}
+
+.dark-mode .bg-light {
+  background-color: #181818 !important;
+}
+
+.dark-mode .alert {
+  background-color: #2a2a2a;
+  color: #ffffff;
+  border: none;
+}
+
+.dark-mode .nav-link {
+  color: #ffffff !important;
+}
+
+/* ================= NAVBAR ================= */
+
+.navbar-brand {
+  font-size: 1.3rem;
+  letter-spacing: 0.5px;
+}
+
+.nav-link {
+  transition: 0.3s;
+}
+
+.nav-link:hover {
+  color: #0d6efd !important;
+}
+
+/* ================= HERO SECTION ================= */
+
+.hero-section {
+  height: 100vh;
+  background: url("images/hero.jpg.jpg") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+}
+
+.hero-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
+.hero-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.hero-section h1 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero-section p {
+  font-size: 1.2rem;
+}
+
+/* ================= GENERAL CARD ================= */
+
+.card {
+  border-radius: 18px;
+  border: none;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+/* ================= WORKOUT CARDS ================= */
+
+.workout-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.workout-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.workout-img {
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+}
+
+.workout-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.workout-body h5 {
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+/* ================= HEALTH CARDS ================= */
+
+.health-card {
+  background: #ffffff;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.health-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+.health-img {
+  width: 100%;
+  height: 240px;
+  object-fit: cover;
+}
+
+.health-body {
+  padding: 20px;
+}
+
+.health-body h5 {
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.health-body ul {
+  padding-left: 18px;
+}
+
+.health-body ul li {
+  margin-bottom: 5px;
+}
+
+/* ================= PROGRESS BAR ================= */
+
+.progress {
+  height: 25px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  font-weight: 600;
+  transition: width 0.4s ease;
+}
+
+/* ================= BUTTONS ================= */
+
+.btn-primary {
+  background: linear-gradient(45deg, #0d6efd, #3d8bfd);
+  border: none;
+}
+
+.btn-success {
+  background: linear-gradient(45deg, #198754, #20c997);
+  border: none;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 992px) {
+  .section-padding {
+    padding: 70px 0;
+  }
+
+  .hero-section h1 {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero-section {
+    height: 80vh;
+  }
+
+  .workout-img,
+  .health-img {
+    height: 200px;
+  }
+}
